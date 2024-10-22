@@ -4,6 +4,17 @@
     font-weight: normal;
     font-style: normal;
 }
+:root{
+    --p-x: 6%;
+    --fs-right-content-menu-p: 10px;
+    --p-right-content-menu-btn: 3px 7px;
+    --fs-right-content-menu-h1: 21px;
+    --w-right-content: 32%;
+    --fd-right-content: ;
+
+    --w-left-content: 73%;
+
+}
 body {
     font-family: 'SolaimanLipi', sans-serif;
 }
@@ -31,7 +42,7 @@ header{
     }
     .middle{
         background-color: ;
-        padding: 30px 80px;
+        padding: 30px var(--p-x);
         border-bottom: 1px solid  grey;
         .logo{
             width: 230px;
@@ -63,7 +74,7 @@ header{
     }
     .down{
         display: flex;
-        padding: 0px 80px;
+        padding: 0px var(--p-x);
         gap: 10px;
         /* border-bottom: 1px solid green; */
         a{
@@ -90,16 +101,12 @@ header{
 /*************** start middle content  ****************/
 .middle-content{
     width: 100%;
-    padding: 30px 80px;
+    padding: 30px var(--p-x);
     display: flex;
+    flex-direction: var(--fd-right-content);
     gap: 10px;
-    /* .left-content{
-        width: 73%;
-        border-radius: 13px!important;
-        overflow: hidden;
-    } */
     .right-content{
-        width: 32%;
+        width: var(--w-right-content);
         display: flex;
         flex-direction: column;
         border: 1px solid silver;
@@ -132,18 +139,18 @@ header{
                 justify-content: space-between;
                 gap: 4px;
                 p{
-                    font-size: 10px;
+                    font-size: var(--fs-right-content-menu-p);
                     color: grey;
                     display: flex;
                     gap: 10px;
                     button{
                         background-color: whitesmoke;
-                        padding: 3px 7px;
+                        padding: var(--p-right-content-menu-btn);
                         border-radius: 5px;
                     }
                 }
                 h1{
-                    font-size: 21px;
+                    font-size: var(--fs-right-content-menu-h1);
                     font-weight: 500;
                 }
             }
@@ -175,6 +182,7 @@ header{
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    display: flex;
 }
 .list {
     position: absolute;
@@ -234,17 +242,12 @@ header{
 .dots li.activee {
     width: 30px;
 }
-@media screen and ( max-width: 768px) { 
-    .slider {
-        height: 400px;
-    }
-    
-}
+
 /***** end slider ******/
 
 /******  start left content  *******/
 .left-content{
-    width: 73%;
+    width: var(--w-left-content);
     border-radius: 13px!important;
     overflow: hidden;
     display: flex;
@@ -317,7 +320,7 @@ header{
 /******  start left content  *******/
 
 .faq{
-    padding: 30px 80px;
+    padding: 30px var(--fx);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -383,7 +386,7 @@ header{
 
 /***** footer  ******/
 footer{
-    padding: 30px 80px;
+    padding: 30px var(--fx);
     display: flex;
     justify-content: space-between;
     background-color: black;
@@ -404,3 +407,32 @@ footer{
         }
     }
 }
+
+/****** responsive *******/
+
+@media (max-width: 1130px) {
+    :root{
+        --p-x: 2%!important;
+    }
+}    
+@media (max-width: 900px) {
+    :root{
+        --fs-right-content-menu-h1: 16px;
+        --fs-right-content-menu-p: 8px;
+    }
+}
+@media (max-width: 820px) {
+    :root{
+        --fs-right-content-menu-h1: 16px;
+        --fs-right-content-menu-p: 8px;
+        --w-right-content: 100%;
+        --fd-right-content: column;
+        --w-left-content:  100% ;
+}
+}
+/* @media screen and ( max-width: 768px) { 
+    .slider {
+        height: 400px;
+    }
+    
+} */
