@@ -177,8 +177,7 @@ header{
 .slider {
     width: 100%;
     max-width: 100%;
-    height: 411px;
-    margin: auto;
+    height: 300px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -190,34 +189,37 @@ header{
     left: 0;
     height: 100%;
     display: flex;
-    width: max-content;
+    width: 100%;
     transition: 1s;
 }
+.itemm{
+    min-width: 100%;
+}
 .list img{
-    width: 780px;
+    min-width: 100%;
     max-width: 100%;
     height: auto;
-    object-fit: cover;
-    max-
 }
 .buttonss{
     position: absolute;
     top: 45%;
-    left: 5%;
-    width: 90%;
+    left: 1%;
+    width: 98%;
     display: flex;
     justify-content: space-between;
 }
 .buttonss button {
+    font-size: 25px;
     width: 50px;
     height: 50px;
     border-radius: 50px;
 	backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.24);
-	color: white;
+	color: black;
     border: none;
     font-family: monospace;
     font-weight: bold;
+    border: 1px solid silver;
 }
 .dots{
     position: absolute;
@@ -252,6 +254,7 @@ header{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
     .left-posts{
         display: flex;
@@ -290,15 +293,6 @@ header{
                h2{
                 font-size: 20px;
                }
-               section {
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                overflow: hidden !important;
-                -webkit-line-clamp: 3;
-                text-overflow: ellipsis;
-                span{
-                    font-size: 17px;
-                }
                }
                p:last-child{
                 font-size: 13px;
@@ -313,6 +307,15 @@ header{
                 background-color: silver;
                 color: black;
                }
+               section {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                span{
+                    font-size: 17px;
+                }
             }
         }
     }
@@ -320,7 +323,7 @@ header{
 /******  start left content  *******/
 
 .faq{
-    padding: 30px var(--f-x);
+    padding: 30px var(--p-x);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -386,7 +389,7 @@ header{
 
 /***** footer  ******/
 footer{
-    padding: 30px var(--f-x);
+    padding: 30px var(--p-x);
     display: flex;
     justify-content: space-between;
     background-color: black;
