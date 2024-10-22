@@ -320,7 +320,7 @@ header{
 /******  start left content  *******/
 
 .faq{
-    padding: 30px var(--fx);
+    padding: 30px var(--f-x);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -386,7 +386,7 @@ header{
 
 /***** footer  ******/
 footer{
-    padding: 30px var(--fx);
+    padding: 30px var(--f-x);
     display: flex;
     justify-content: space-between;
     background-color: black;
