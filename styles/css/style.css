@@ -5,6 +5,15 @@
     font-style: normal;
 }
 :root{
+    --w-logo:230px;
+
+    --g-top-menus: 20px;
+    --fs-top-menus: 20px;
+    --p-x-down-menus: 15px;
+    --fs--down-menus: 22px;
+
+    --h-slider: 300px;
+
     --p-x: 6%;
     --fs-right-content-menu-p: 10px;
     --p-right-content-menu-btn: 3px 7px;
@@ -14,6 +23,17 @@
 
     --w-left-content: 73%;
 
+    --w-posts: 33%;
+    --fd-posts: ;
+
+    --w-1st-faq: 20%;
+    --w-2nd-faq: 80%;
+}
+.logo{
+    width: var(--w-logo);
+    img{
+        width: 100%;
+    }
 }
 body {
     font-family: 'SolaimanLipi', sans-serif;
@@ -22,34 +42,33 @@ body {
 header{
     /* padding: 2px 30px; */
     .customer-service{
+        font-size: var(--fs-top-menus);
         padding: 5px 15px;
         border-radius: 10px
     }
-    .top-menus a{
-        opacity: 0.5;
-        font-size: 20px;
-        transition: 1s ease;
-    }
+    .top-menus{
+        gap: var(--g-top-menus);
+        a{
+            opacity: 0.4;
+            font-size: var(--fs-top-menus);
+            transition: 1s ease;
+        }
+    } 
     .top-menus a:hover,
     .actve{
         opacity: 1 !important;
-        font-size: 21ps;
     }
     .customer-service:hover{
+        font-size: var(--fs-top-menus);
         background-color: brown;
         color: white !important;
-        transition: 1s ease
+        transition: 1s ease;
     }
     .middle{
         background-color: ;
         padding: 30px var(--p-x);
         border-bottom: 1px solid  grey;
-        .logo{
-            width: 230px;
-            img{
-                width: 100%;
-            }
-        }
+
         .time-date{
             display: flex;
             align-items: center;
@@ -76,16 +95,14 @@ header{
         display: flex;
         padding: 0px var(--p-x);
         gap: 10px;
-        /* border-bottom: 1px solid green; */
         a{
             text-decoration: none;
             background-color: transparent;
             color: black;
             transition: 1s ease;
-            /* border-right: 1px solid grey; */
             h1{
-                padding: 7px 15px;
-                font-size: 24px;
+                padding: 7px var(--p-x-down-menus);
+                font-size: var(--fs--down-menus);
                 font-weight: 500;
             }
         }
@@ -115,6 +132,7 @@ header{
             text-align: center;
             font-weight: 600;
             padding: 15px 0;
+            background-color: rgba(192, 192, 192, 0.219);
         }
         .right-content-menu{
             display: flex;
@@ -177,7 +195,7 @@ header{
 .slider {
     width: 100%;
     max-width: 100%;
-    height: 300px;
+    height: var(--h-slider);
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -255,13 +273,14 @@ header{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 16.3px;
     .left-posts{
         display: flex;
+        flex-direction: var(--fd-posts);
         margin-top: 10px;
         gap: 10px;
         .posts{
-            width: 33%;
+            width: var(--w-posts);
             display: flex;
             flex-direction: column;
             padding: 20px;
@@ -319,6 +338,19 @@ header{
             }
         }
     }
+    .running-text{
+        display: flex;
+        width: 100%;
+        padding: 15px 0;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid silver;
+        border-radius: 10px;
+        marquee{
+            font-size: 23px;
+            font-weight: 500;
+        }
+    }
 }
 /******  start left content  *******/
 
@@ -356,15 +388,16 @@ header{
             transition: 1s ease;
             gap: 15px;
             div:first-child{
-                width: 15%;
+                width: var(--w-1st-faq);
                 display: flex;
                 img{
                     width: 100%;
+                    height: auto;
                     border-radius: 10px;
                 }
             }
             div:last-child{
-                width: 80%;
+                width: var(--w-2nd-faq);
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -376,7 +409,11 @@ header{
                     border-radius: 8px;
                 }
                 h1{
+                    width: 95%;
                     font-size: 22px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
             }
         }
@@ -392,6 +429,7 @@ footer{
     padding: 30px var(--p-x);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: black;
     ul{
         margin: 0;
@@ -416,12 +454,14 @@ footer{
 @media (max-width: 1130px) {
     :root{
         --p-x: 2%!important;
+        --h-slider: 276px;
     }
 }    
 @media (max-width: 900px) {
     :root{
-        --fs-right-content-menu-h1: 16px;
-        --fs-right-content-menu-p: 8px;
+        --w-right-content: 100%;
+        --fd-right-content: column;
+        --w-left-content: 100%;
     }
 }
 @media (max-width: 820px) {
@@ -430,12 +470,45 @@ footer{
         --fs-right-content-menu-p: 8px;
         --w-right-content: 100%;
         --fd-right-content: column;
-        --w-left-content:  100% ;
+        --w-left-content: 100%;
+        --p-x-down-menus: 8px;
+        --fs--down-menus: 16px;
+        --h-slider: 224px; 
 }
 }
-/* @media screen and ( max-width: 768px) { 
-    .slider {
-        height: 400px;
+@media (max-width: 550px) {
+    :root{
+        --w-posts: 100%;
+        --fd-posts: column;
+        --w-1st-faq: 40%;
+        --w-2nd-faq: 58%;
+        --w-logo: 150px !important;
+        --g-top-menus: 10px;
+        --h-slider: 180px;
     }
-    
-} */
+    .down{
+        overflow: hidden;
+        overflow-x: scroll;
+        a{
+            white-space: nowrap!important;
+        }
+    }
+    .down::-webkit-scrollbar {
+        display: none;
+    }
+    #prev,
+    #next{
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+    }
+}
+@media (max-width: 400px) {
+    :root{
+        --p-x-down-menus: 8px;
+        --fs--down-menus: 18px;
+        --fs-top-menus: 17px;
+        --h-slider: 135px;
+        
+    }
+}
